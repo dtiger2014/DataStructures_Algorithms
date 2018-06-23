@@ -1,60 +1,41 @@
 <?php
 
-require("LinkedList.php");
-
-class LinkedListStack
+class LinkedListStack extends LinkedList
 {
-    private $list;
-
     public function __construct($e=null, $next=null)
     {
-        $this->list = new LinkedList();
+        parent::__construct();
     }
 
     public function getSize()
     {
-        return $this->list->getSize();
+        return $this->size;
     }
 
     public function isEmpty()
     {
-        return $this->list->isEmpty();
+        return $this->size == 0;
     }
 
     public function push($element)
     {
-        $this->list->addFirst($element);
+        $this->addFirst($element);
     }
 
     public function pop()
     {
-        return $this->list->removeFirst();
+        return $this->removeFirst();
     }
 
     public function peek()
     {
-        return $this->list->getFirst();
+        return $this->getFrist();
     }
 
     public function toString()
     {
-        $str = "Stack: top ";
-        $str .= $this->list->toString();
+        $str = "LinkedListStack: top ";
+        $str .= parent::toString();
         return $str;
     }
-}
-
-
-TestLinkedListStack();
-
-function TestLinkedListStack()
-{
-    $stack = new LinkedListStack();
-    for ($i = 0; $i < 5; $i++) {
-        $stack->push($i);
-        echo $stack->toString();
-    }
-
-    $stack->pop();
-    echo $stack->toString();
 }

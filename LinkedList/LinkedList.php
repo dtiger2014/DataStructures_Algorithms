@@ -1,4 +1,29 @@
 <?php
+/**
+ * LinkedList 链表。包含一个指针（next）单向遍历搜索。线性结构
+ * 使用场景：
+ *
+ * 主要操作：
+ * addFirst：O(1)
+ * addLast：O(n)
+ * add：O(n) avg
+ * getFirst：O(1)
+ * getLast：O(n)
+ * get：O(n) avg
+ * set：O(n) avg
+ * contains：O(n) avg
+ * removeFirst：O(1)
+ * removeLast：O(n)
+ * remove：O(n) avg
+ * removeElement：O(n) avg
+ * 
+ * getSize ：O(1)
+ * isEmpty ：O(1)
+ * 
+ * 总结：单向链表，线性结构。第一个元素的操作是O(1)，但是要获取后面的元素效率会大幅下降。
+ * 可以扩展成 LinkedListStack 链表栈。跟数组栈效率差不多O(1)。
+ * 链表是动态结构，可以自动分配内存大小。数组需要初始化大小才可以使用。
+ */
 
 class Node 
 {
@@ -163,29 +188,4 @@ class LinkedList
         $str .= "NULL\n";
         return $str;
     }
-}
-
-
-require_once ("../util/common.php");
-
-TestLinkedList();
-
-function TestLinkedList() {
-    $linkedList = new LinkedList();
-    for ($i = 0; $i < 5; $i++) {
-        $linkedList->addLast($i);
-        echo $linkedList->toString();
-    }
-
-    $linkedList->add(2, 666);
-    echo $linkedList->toString();
-
-    $linkedList->remove(2);
-    echo $linkedList->toString();
-
-    $linkedList->removeFirst();
-    echo $linkedList->toString();
-
-    $linkedList->removeLast();
-    echo $linkedList->toString();
 }
