@@ -25,19 +25,7 @@
  * 链表是动态结构，可以自动分配内存大小。数组需要初始化大小才可以使用。
  */
 
-class Node 
-{
-    public $element;
-    public $next;
-
-    public function __construct($e=null, $next=null)
-    {
-        $this->element = $e;
-        $this->next = $next;
-    }
-}
-
-class LinkedList 
+class LinkedList
 {
     private $dummyHead;
     private $size;

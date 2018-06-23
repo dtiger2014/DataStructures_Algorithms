@@ -11,8 +11,8 @@ spl_autoload_register(function ($class_name) {
 /**
  * 测试
  */
-// TestLinkedList();
-TestLinkedListStack();
+TestLinkedList();
+// TestLinkedListStack();
 
 function TestLinkedList() {
     $linkedList = new LinkedList();
